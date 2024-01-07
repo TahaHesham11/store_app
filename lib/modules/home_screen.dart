@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:store_app/constans.dart';
 import 'package:store_app/cubit/home_cubit.dart';
+import 'package:store_app/cubit/home_state.dart';
 import 'package:store_app/models/product.dart';
 import 'package:store_app/modules/details_screen.dart';
 

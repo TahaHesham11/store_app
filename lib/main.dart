@@ -5,10 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:store_app/bloc_observer.dart';
 import 'package:store_app/constans.dart';
 import 'package:store_app/cubit/home_cubit.dart';
-import 'package:store_app/modules/home_screen.dart';
 import 'package:store_app/modules/taps_item.dart';
 
-import 'models/product.dart';
 
 void main() {
 

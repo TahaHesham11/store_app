@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:store_app/cubit/home_cubit.dart';
+import 'package:store_app/cubit/home_state.dart';
 
 class TapsItemScreen extends StatelessWidget {
 

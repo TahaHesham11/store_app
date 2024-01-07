@@ -1,14 +1,12 @@
 import 'dart:convert';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:store_app/cubit/home_state.dart';
 import 'package:store_app/models/product.dart';
 import 'package:store_app/modules/favorite_screen.dart';
 import 'package:store_app/modules/home_screen.dart';
 
-part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
@@ -63,18 +61,15 @@ emit(HomeGetProductSuccessState());
     var existingIndex = getFavoriteProducts.indexWhere((element) => element.id == id);
 
     if (existingIndex >= 0) {
-      // إذا وجد العنصر، قم بإزالته من القائمة
       getFavoriteProducts.removeAt(existingIndex);
       emit(HomeRemoveFavoriteState());
     } else {
-      // إذا لم يتم العثور على العنصر، تحقق من وجوده في قائمة المنتجات الكلية
       var productToAdd = getAllProducts.firstWhere((element) => element.id == id  );
 
       if (productToAdd != null) {
         getFavoriteProducts.add(productToAdd);
         emit(HomeAddFavoriteState());
       } else {
-        // يمكنك التعامل مع حالة عدم العثور على المنتج بالشكل الذي تراه مناسبًا هنا.
       }
     }
   }
